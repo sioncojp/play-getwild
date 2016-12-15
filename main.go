@@ -130,7 +130,7 @@ func NewPiano(freqs []float32) *Piano {
 		osc := Multiplex(base...)
 		envelopes = append(envelopes, G(0.4, GenEnvelope(&p.notes[i], osc)))
 	}
-	p.oscillator = Multiplex(envelopes...) // all note oscilator multiplex
+	p.oscillator = Multiplex(envelopes...)
 	return p
 }
 func (p *Piano) NoteOn(key int) {
